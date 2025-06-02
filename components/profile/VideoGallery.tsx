@@ -4,7 +4,13 @@ import { useState, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Play, Pause, X, Maximize, Volume2, VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogClose,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 type VideoGalleryProps = {
   videos: string[];
@@ -71,8 +77,14 @@ export default function VideoGallery({ videos }: VideoGalleryProps) {
         ))}
       </div>
 
-      <Dialog open={!!activeVideo} onOpenChange={(open) => !open && setActiveVideo(null)}>
+      <Dialog
+        open={!!activeVideo}
+        onOpenChange={(open) => !open && setActiveVideo(null)}
+      >
         <DialogContent className="max-w-3xl p-0 overflow-hidden bg-black">
+          <DialogHeader>
+            <DialogTitle>Video</DialogTitle>
+          </DialogHeader>
           <div className="relative">
             {activeVideo && (
               <video
@@ -85,7 +97,7 @@ export default function VideoGallery({ videos }: VideoGalleryProps) {
                 controls={false}
               />
             )}
-            
+
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
               <div className="flex items-center justify-between">
                 <Button
@@ -100,7 +112,7 @@ export default function VideoGallery({ videos }: VideoGalleryProps) {
                     <Play className="h-5 w-5" />
                   )}
                 </Button>
-                
+
                 <div className="flex items-center gap-2">
                   <Button
                     variant="ghost"
@@ -114,7 +126,7 @@ export default function VideoGallery({ videos }: VideoGalleryProps) {
                       <Volume2 className="h-5 w-5" />
                     )}
                   </Button>
-                  
+
                   <DialogClose asChild>
                     <Button
                       variant="ghost"
