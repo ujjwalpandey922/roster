@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Employer, EmploymentType } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -56,6 +56,15 @@ export default function EmployerCard({
     );
   }, [editedEmployer, employer]);
 
+  const [videoUrlsString, setVideoUrlsString] = useState(
+    editedEmployer.videoUrls.join("\n")
+  );
+
+  // useEffect to keep editedEmployer.videoUrls in sync with the string version
+  useEffect(() => {
+    setVideoUrlsString(editedEmployer.videoUrls.join("\n"));
+  }, [editedEmployer.videoUrls]);
+
   // Validate required fields
   const isValid = useMemo(() => {
     return (
@@ -65,6 +74,7 @@ export default function EmployerCard({
       editedEmployer.contribution.trim().length > 0
     );
   }, [editedEmployer]);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -299,13 +309,16 @@ export default function EmployerCard({
           </label>
           <Textarea
             name="videoUrls"
-            value={editedEmployer.videoUrls.join("\n")}
+            value={videoUrlsString}
             onChange={(e) => {
+              const newString = e.target.value;
+              setVideoUrlsString(newString);
               setEditedEmployer((prev) => ({
                 ...prev,
-                videoUrls: e.target.value
+                videoUrls: newString
                   .split("\n")
-                  .filter((url) => url.trim() !== ""),
+                  .map((url) => url.trim())
+                  .filter((url) => url !== ""),
               }));
             }}
             rows={4}

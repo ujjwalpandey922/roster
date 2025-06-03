@@ -14,11 +14,11 @@ export default function ClientProfilePage() {
       <ProfileHeader />
 
       <main className="container px-4 py-8 mx-auto max-w-4xl">
-        <div className="flex justify-end mb-4">
+        <div className="flex justify-end mb-6">
           <Button
             onClick={() => setIsEditing(!isEditing)}
             variant={isEditing ? "default" : "outline"}
-            className="gap-2"
+            className="gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg"
           >
             {isEditing ? (
               <>

@@ -83,7 +83,7 @@ export default function VideoGallery({ videos }: VideoGalleryProps) {
       >
         <DialogContent className="max-w-3xl p-0 overflow-hidden bg-black">
           <DialogHeader>
-            <DialogTitle>Video</DialogTitle>
+            <DialogTitle></DialogTitle>
           </DialogHeader>
           <div className="relative">
             {activeVideo && (

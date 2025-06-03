@@ -49,7 +49,74 @@ export const mockProfileData: Profile = {
     },
   ],
 };
+// import { Profile } from "./types";
 
+export const profileVariations: Record<string, Profile> = {
+  default: {
+    id: "0",
+    username: "default",
+    firstName: "Default",
+    lastName: "User",
+    avatarUrl: "https://via.placeholder.com/150",
+    summary: "This is a default user profile.",
+    skills: ["Skill A", "Skill B"],
+    employers: [],
+  },
+
+  canva: {
+    id: "1",
+    username: "canva",
+    firstName: "Sonu",
+    lastName: "Choudhary",
+    avatarUrl:
+      "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg",
+    summary:
+      "Creative professional with 5+ years of experience in video production and editing...",
+    skills: [
+      "Video Editing",
+      "Motion Graphics",
+      "Cinematography",
+      "Storytelling",
+      "Adobe Premiere Pro",
+      "After Effects",
+    ],
+    employers: [
+      {
+        id: "emp1",
+        companyName: "CreativeMinds Studio",
+        jobTitle: "Senior Video Editor",
+        startDate: "2021-03-01",
+        endDate: null,
+        employmentType: "FULL_TIME",
+        contribution: "Led major brand campaigns...",
+        videoUrls: ["https://example.com/video1.mp4"],
+      },
+    ],
+  },
+
+  personal: {
+    id: "2",
+    username: "dellinzhang",
+    firstName: "Dellin",
+    lastName: "Zhang",
+    avatarUrl:
+      "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+    summary: "Animator and VFX artist passionate about visual storytelling.",
+    skills: ["Animation", "VFX", "Storytelling", "Adobe After Effects"],
+    employers: [
+      {
+        id: "emp2",
+        companyName: "FrameForge",
+        jobTitle: "Lead Animator",
+        startDate: "2020-01-01",
+        endDate: null,
+        employmentType: "FULL_TIME",
+        contribution: "Directed animation on short films...",
+        videoUrls: ["https://example.com/video2.mp4"],
+      },
+    ],
+  },
+};
 // Mock API function to fetch profile data
 export async function fetchProfileData(username: string): Promise<Profile> {
   // In a real app, this would be an API call
@@ -61,7 +128,16 @@ export async function fetchProfileData(username: string): Promise<Profile> {
 export async function extractPortfolioData(url: string): Promise<Profile> {
   // In a real app, this would be an API call
   await new Promise((resolve) => setTimeout(resolve, 1500));
-  return mockProfileData;
+
+  // Determine which profile variation to return based on URL
+  if (url.includes("canva")) {
+    return profileVariations["canva"];
+  } else if (url.includes("dellinzhang") || url.includes("personal-site")) {
+    return profileVariations["personal"];
+  }
+
+  // Default profile for unknown URLs
+  return profileVariations["default"];
 }
 
 // Mock API function to update profile data

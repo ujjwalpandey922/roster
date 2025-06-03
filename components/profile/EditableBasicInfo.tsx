@@ -26,6 +26,7 @@ export default function EditableBasicInfo({
     summary: profile.summary,
     avatarUrl: profile.avatarUrl,
   });
+
   // Calculate if there are changes
   const hasChanges = useMemo(() => {
     return (
@@ -72,15 +73,19 @@ export default function EditableBasicInfo({
 
   if (isEditing) {
     return (
-      <div className="bg-card rounded-xl p-6 mb-8 border animate-in fade-in-50 duration-300">
+      <div className="bg-card rounded-xl p-6 mb-8 border border-border shadow-lg transition-all duration-300 hover:shadow-xl">
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <div className="relative group">
-            <Avatar className="h-24 w-24">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-md opacity-20 group-hover:opacity-30 transition-opacity"></div>
+            <Avatar className="h-24 w-24 relative">
               <AvatarImage
                 src={editedInfo.avatarUrl}
                 alt={`${profile.firstName} ${profile.lastName}`}
+                className="object-cover"
               />
-              <AvatarFallback className="text-2xl">{initials}</AvatarFallback>
+              <AvatarFallback className="text-2xl bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+                {initials}
+              </AvatarFallback>
             </Avatar>
             <div className="absolute inset-0 bg-black/40 rounded-full opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
               <Pencil className="h-5 w-5 text-white" />
@@ -101,6 +106,7 @@ export default function EditableBasicInfo({
                   name="firstName"
                   value={editedInfo.firstName}
                   onChange={handleChange}
+                  className="border-border focus:border-blue-500"
                 />
               </div>
 
@@ -116,6 +122,7 @@ export default function EditableBasicInfo({
                   name="lastName"
                   value={editedInfo.lastName}
                   onChange={handleChange}
+                  className="border-border focus:border-blue-500"
                 />
               </div>
             </div>
@@ -133,7 +140,7 @@ export default function EditableBasicInfo({
                 value={editedInfo.summary}
                 onChange={handleChange}
                 rows={4}
-                className="resize-none"
+                className="resize-none border-border focus:border-blue-500"
               />
             </div>
 
@@ -150,12 +157,14 @@ export default function EditableBasicInfo({
                 value={editedInfo.avatarUrl}
                 onChange={handleChange}
                 placeholder="https://example.com/profile-image.jpg"
+                className="border-border focus:border-blue-500"
               />
             </div>
 
             <Button
               onClick={handleSave}
               disabled={!hasChanges || !isValid || isEditingSummary}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg"
             >
               {isEditingSummary ? "Saving..." : "Save Basic Info"}
             </Button>
@@ -166,22 +175,25 @@ export default function EditableBasicInfo({
   }
 
   return (
-    <div className="bg-card rounded-xl p-6 mb-8 border">
+    <div className="bg-card rounded-xl p-6 mb-8 border border-border shadow-md transition-all duration-300 hover:shadow-lg">
       <div className="flex flex-col md:flex-row gap-6 items-start">
-        <Avatar className="h-24 w-24">
+        <Avatar className="h-24 w-24 border-2 border-blue-500/20">
           <AvatarImage
             src={profile.avatarUrl}
             alt={`${profile.firstName} ${profile.lastName}`}
+            className="object-cover"
           />
-          <AvatarFallback className="text-2xl">{initials}</AvatarFallback>
+          <AvatarFallback className="text-2xl bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+            {initials}
+          </AvatarFallback>
         </Avatar>
 
         <div className="flex-1">
-          <h1 className="text-3xl font-bold mb-2">
+          <h1 className="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
             {profile.firstName} {profile.lastName}
           </h1>
 
-          <p className="text-muted-foreground mb-6 max-w-2xl">
+          <p className="text-muted-foreground mb-6 max-w-2xl text-lg leading-relaxed">
             {profile.summary}
           </p>
 
@@ -189,7 +201,7 @@ export default function EditableBasicInfo({
             {profile.skills?.map((skill, index) => (
               <span
                 key={index}
-                className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm"
+                className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 dark:text-blue-200 dark:from-blue-900/50 dark:to-purple-900/50 rounded-full text-sm font-medium"
               >
                 {skill}
               </span>
