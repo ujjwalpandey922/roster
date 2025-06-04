@@ -1,4 +1,8 @@
-export type EmploymentType = "FULL_TIME" | "PART_TIME" | "CONTRACT" | "FREELANCE";
+export type EmploymentType =
+  | "FULL_TIME"
+  | "PART_TIME"
+  | "CONTRACT"
+  | "FREELANCE";
 
 export interface Employer {
   id: string;
@@ -20,6 +24,12 @@ export interface Profile {
   summary: string;
   skills: string[];
   employers: Employer[];
+  portfolioItems?: {
+    id: string;
+    imageUrl: string;
+    label: string;
+    link: string;
+  }[];
 }
 
 export interface PortfolioSubmission {

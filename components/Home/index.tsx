@@ -38,6 +38,7 @@ export default function Home() {
 
       // Mock API call - in real app this would validate the URL
       const profile = await extractPortfolioData(url);
+      // console.log(profile);
       // For demo purposes, we'll just redirect to a profile page
       // In a real app, this would happen after backend processing
       router.push(`/${profile.username}`);
@@ -135,6 +136,18 @@ export default function Home() {
                       className="font-mono text-blue-600 dark:text-blue-400 block mt-1 break-all w-full text-left text-ellipsis overflow-hidden p-0 "
                     >
                       Try this portfolio...!!!
+                    </Button>
+                    <p className="text-xl text-center text-muted-foreground">
+                      or
+                    </p>
+                    <Button
+                      onClick={() =>
+                        setUrl("https://dellinzhang.com/video-edit")
+                      }
+                      variant="link"
+                      className="font-mono text-blue-600 dark:text-blue-400 block mt-1 break-all w-full text-left text-ellipsis overflow-hidden p-0 "
+                    >
+                      Maybe This...!!!
                     </Button>
                   </div>
                 </div>

@@ -194,18 +194,20 @@ export default function EditableBasicInfo({
           </h1>
 
           <p className="text-muted-foreground mb-6 max-w-2xl text-lg leading-relaxed">
-            {profile.summary}
+            {profile.summary || "No summary available."}
           </p>
 
           <div className="flex flex-wrap gap-3">
-            {profile.skills?.map((skill, index) => (
-              <span
-                key={index}
-                className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 dark:text-blue-200 dark:from-blue-900/50 dark:to-purple-900/50 rounded-full text-sm font-medium"
-              >
-                {skill}
-              </span>
-            ))}
+            {profile.skills.length > 0
+              ? profile.skills?.map((skill, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 dark:text-blue-200 dark:from-blue-900/50 dark:to-purple-900/50 rounded-full text-sm font-medium"
+                  >
+                    {skill}
+                  </span>
+                ))
+              : null}
           </div>
         </div>
       </div>

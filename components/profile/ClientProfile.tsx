@@ -6,9 +6,12 @@ import { Pencil, Check } from "lucide-react";
 import EditableBasicInfo from "@/components/profile/EditableBasicInfo";
 import EmployerSection from "@/components/profile/EmployerSection";
 import ProfileHeader from "@/components/profile/ProfileHeader";
+import { useProfile } from "@/contexts/ProfileContext";
+import PortfolioGrid from "./PersonalPortfolio";
 
 export default function ClientProfilePage() {
   const [isEditing, setIsEditing] = useState(false);
+  const { profile } = useProfile();
   return (
     <div className="min-h-screen bg-background">
       <ProfileHeader />
@@ -36,7 +39,11 @@ export default function ClientProfilePage() {
 
         <EditableBasicInfo isEditing={isEditing} />
 
-        <EmployerSection isEditing={isEditing} />
+        {profile.portfolioItems && <PortfolioGrid isEditing={isEditing} />}
+
+        {profile.employers.length > 0 && (
+          <EmployerSection isEditing={isEditing} />
+        )}
       </main>
     </div>
   );
