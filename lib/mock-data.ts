@@ -132,7 +132,8 @@ export const profileVariations: Record<string, Profile> = {
       },
       {
         id: "2",
-        imageUrl: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+        imageUrl:
+          "https://plus.unsplash.com/premium_photo-1748876811441-fdc37ada7905?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2fHx8ZW58MHx8fHx8",
         label: "JENerationDIY",
         link: "https://dellinzhang.com/jenerationdiy",
       },

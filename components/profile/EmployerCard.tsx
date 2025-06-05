@@ -396,10 +396,10 @@ export default function EmployerCard({
       )}
 
       {employer.videoUrls.length > 0 && (
-        <div>
+        <>
           <h4 className="text-sm font-medium mb-2">Portfolio Work</h4>
           <VideoGallery videos={employer.videoUrls} />
-        </div>
+        </>
       )}
     </div>
   );

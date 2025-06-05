@@ -17,6 +17,7 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { extractPortfolioData } from "@/lib/mock-data";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import ProfileFooter from "../profile/ProfileFooter";
 export default function Home() {
   const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -133,7 +134,7 @@ export default function Home() {
                         setUrl("https://sonuchoudhary.my.canva.site/portfolio")
                       }
                       variant="link"
-                      className="font-mono text-blue-600 dark:text-blue-400 block mt-1 break-all w-full text-left text-ellipsis overflow-hidden p-0 "
+                      className="font-mono text-blue-600 dark:text-blue-400 block mt-1 break-all w-full text-center text-ellipsis overflow-hidden p-0 "
                     >
                       Try this portfolio...!!!
                     </Button>
@@ -145,7 +146,7 @@ export default function Home() {
                         setUrl("https://dellinzhang.com/video-edit")
                       }
                       variant="link"
-                      className="font-mono text-blue-600 dark:text-blue-400 block mt-1 break-all w-full text-left text-ellipsis overflow-hidden p-0 "
+                      className="font-mono text-blue-600 dark:text-blue-400 block mt-1 break-all w-full text-center text-ellipsis overflow-hidden p-0 "
                     >
                       Maybe This...!!!
                     </Button>
@@ -168,7 +169,7 @@ export default function Home() {
               src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
               alt="Creative professional working"
               width={800}
-              height={600}
+              height={800}
               className="object-cover w-full aspect-video"
               priority
             />

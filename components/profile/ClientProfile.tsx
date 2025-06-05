@@ -8,6 +8,7 @@ import EmployerSection from "@/components/profile/EmployerSection";
 import ProfileHeader from "@/components/profile/ProfileHeader";
 import { useProfile } from "@/contexts/ProfileContext";
 import PortfolioGrid from "./PersonalPortfolio";
+import ProfileFooter from "./ProfileFooter";
 
 export default function ClientProfilePage() {
   const [isEditing, setIsEditing] = useState(false);
@@ -45,6 +46,7 @@ export default function ClientProfilePage() {
           <EmployerSection isEditing={isEditing} />
         )}
       </main>
+      <ProfileFooter />
     </div>
   );
 }
