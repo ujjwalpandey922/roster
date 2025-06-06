@@ -315,7 +315,7 @@ export default function AddEmployerDialog({
             />
           </div>
 
-          <DialogFooter>
+          <DialogFooter className="gap-4">
             <Button type="button" variant="outline" onClick={onClose}>
               Cancel
             </Button>

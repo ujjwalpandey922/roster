@@ -8,7 +8,7 @@ export default function ApiDocumentationPage() {
   const employerId = "employerId";
   return (
     <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex justify-between items-center mb-8 gap-6 max-sm:flex-wrap">
         <h1 className="text-3xl font-bold">API Documentation</h1>
         <Button asChild>
           <Link href="/">Back to Home</Link>

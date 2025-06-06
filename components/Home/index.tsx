@@ -76,7 +76,7 @@ export default function Home() {
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl blur-xl opacity-10 group-hover:opacity-20 transition-all duration-300 animate-tilt"></div>
           <Card className="w-full max-w-lg relative overflow-hidden transition-transform duration-300 hover:shadow-xl">
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
-            <CardContent className="p-8 space-y-6">
+            <CardContent className="p-4 sm:p-8 space-y-6">
               <header className="space-y-3">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="bg-blue-100 dark:bg-blue-900/50 p-2 rounded-lg">
@@ -213,7 +213,7 @@ export default function Home() {
 
       {/* Testimonial */}
       <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-8 max-w-4xl mx-auto border border-blue-100 dark:border-blue-800/50">
-        <div className="flex items-start gap-4">
+        <div className="flex items-start sm:gap-4 gap-12 max-sm:flex-col ">
           <Avatar className="h-12 w-12">
             <AvatarImage src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" />
             <AvatarFallback>JD</AvatarFallback>
