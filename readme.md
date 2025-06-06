@@ -34,40 +34,59 @@ See [api-documentation.md](api-documentation.md) for detailed documentation of a
 
 ## Project Structure
 
-next-app
-|-- app
-| |-- [username]
-| |-- api
-| |-- api-documentation
-| |-- globals.css
-| |-- layout.tsx
-| `-- page.tsx
-|-- components
-|   |-- Home
-|   `-- profile
-|-- contexts
-| |-- ProfileContext.tsx
-| `-- ThemeProvider.tsx
-|-- docs
-|   `-- api-documentation.md
-|-- lib
-| |-- mock-data.ts
-| |-- types.ts
-| |-- utils.ts
-| `-- uuid.ts
-|-- node_modules
-|-- public
-|-- .eslintrc.json
-|-- .gitignore
-|-- components.json
-|-- next-env.d.ts
-|-- next.config.js
-|-- package-lock.json
-|-- package.json
-|-- postcss.config.js
-|-- README.md
-|-- tailwind.config.ts
-`-- tsconfig.json
+The project is structured as follows:
+
+```
+.
+├── app
+│   ├── page.tsx
+│   ├── [username]
+|   |         └── page.tss
+│   ├── page.tsx
+│   ├── layout.tsx
+│   └── api
+│       └── portfolio
+|               └── route.ts
+|
+|── components
+│       ├── PortfolioForm.tsx
+│       ├── PortfolioData.tsx
+│       ├── EmployerForm.tsx
+│       ├── EmployerData.tsx
+│       ├── ProfileForm.tsx
+│       ├── ProfileData.tsx
+│       └── EmployerCard.tsx
+|
+└── contexts
+│       ├── ProfileContext.tsx
+│       └── ThemeProvider.tsx
+|
+├── lib
+│   ├── types.ts
+│   ├── utils.ts
+│   ├── mock-data.ts
+│   └── uuid.ts
+|
+├── docs
+│   └── api-documentation.ts
+│
+├── pages
+│   └── api
+│       ├── portfolio.ts
+│       ├── employers.ts
+│       ├── profile.ts
+│       ├── employer.ts
+│       ├── update.ts
+│       └── delete.ts
+|
+├── tailwind.config.ts
+├── tsconfig.json
+├── next-env.d.ts
+├── components.json
+├── package.json
+├── README.md
+└── .gitignore
+```
 
 ### Key Directories Explained:
 
