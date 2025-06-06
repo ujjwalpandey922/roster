@@ -34,45 +34,40 @@ See [api-documentation.md](api-documentation.md) for detailed documentation of a
 
 ## Project Structure
 
-/next-app
-├── /app
-│ ├── /[username] # Dynamic profile routes
-│ │ ├── /api # API routes
-│ │ ├── api-documentation # API docs
-│ │ ├── globals.css # Global styles
-│ │ ├── layout.tsx # Layout component
-│ │ └── page.tsx # Profile page
-│ └── /components
-│ ├── /Home # Home page components
-│ └── /profile # Profile components
-│
-├── /contexts
+next-app/
+├── app/
+│ ├── [username]/ # Dynamic profile routes
+│ ├── api/ # API routes
+│ ├── api-documentation/ # API documentation pages
+│ ├── globals.css # Global styles
+│ ├── layout.tsx # Root layout component
+│ └── page.tsx # Profile page component
+├── components/
+│ ├── Home/ # Home page components
+│ └── profile/ # Profile-related components
+├── contexts/
 │ ├── ProfileContext.tsx # Profile state management
-│ └── ThemeProvider.tsx # Theme management
-│
-├── /docs
+│ └── ThemeProvider.tsx # Theme management context
+├── docs/
 │ └── api-documentation.md # API documentation
-│
-├── /lib
+├── lib/
 │ ├── mock-data.ts # Mock data for development
-│ ├── types.ts # Type definitions
+│ ├── types.ts # TypeScript type definitions
 │ ├── utils.ts # Utility functions
-│ └── uuid.ts # ID generation
-│
-├── /node_modules # Dependencies
-├── /public # Static assets
-│
-├── .eslintrc.json # ESLint config
+│ └── uuid.ts # UUID generation utilities
+├── node_modules/ # Project dependencies
+├── public/ # Static assets
+├── .eslintrc.json # ESLint configuration
 ├── .gitignore # Git ignore rules
-├── components.json # Component registry
-├── next-env.d.ts # Next.js types
-├── next.config.js # Next.js config
+├── components.json # Component registry configuration
+├── next-env.d.ts # Next.js environment types
+├── next.config.js # Next.js configuration
 ├── package-lock.json # Dependency lockfile
 ├── package.json # Project manifest
-├── postcss.config.js # PostCSS config
+├── postcss.config.js # PostCSS configuration
 ├── README.md # Project documentation
-├── tailwind.config.ts # Tailwind CSS config
-└── tsconfig.json # TypeScript config
+├── tailwind.config.ts # Tailwind CSS configuration
+└── tsconfig.json # TypeScript configuration
 
 ### Key Directories Explained:
 
