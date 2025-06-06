@@ -34,40 +34,40 @@ See [api-documentation.md](api-documentation.md) for detailed documentation of a
 
 ## Project Structure
 
-next-app/
-├── app/
-│ ├── [username]/ # Dynamic profile routes
-│ ├── api/ # API routes
-│ ├── api-documentation/ # API documentation pages
-│ ├── globals.css # Global styles
-│ ├── layout.tsx # Root layout component
-│ └── page.tsx # Profile page component
-├── components/
-│ ├── Home/ # Home page components
-│ └── profile/ # Profile-related components
-├── contexts/
-│ ├── ProfileContext.tsx # Profile state management
-│ └── ThemeProvider.tsx # Theme management context
-├── docs/
-│ └── api-documentation.md # API documentation
-├── lib/
-│ ├── mock-data.ts # Mock data for development
-│ ├── types.ts # TypeScript type definitions
-│ ├── utils.ts # Utility functions
-│ └── uuid.ts # UUID generation utilities
-├── node_modules/ # Project dependencies
-├── public/ # Static assets
-├── .eslintrc.json # ESLint configuration
-├── .gitignore # Git ignore rules
-├── components.json # Component registry configuration
-├── next-env.d.ts # Next.js environment types
-├── next.config.js # Next.js configuration
-├── package-lock.json # Dependency lockfile
-├── package.json # Project manifest
-├── postcss.config.js # PostCSS configuration
-├── README.md # Project documentation
-├── tailwind.config.ts # Tailwind CSS configuration
-└── tsconfig.json # TypeScript configuration
+next-app
+|-- app
+| |-- [username]
+| |-- api
+| |-- api-documentation
+| |-- globals.css
+| |-- layout.tsx
+| `-- page.tsx
+|-- components
+|   |-- Home
+|   `-- profile
+|-- contexts
+| |-- ProfileContext.tsx
+| `-- ThemeProvider.tsx
+|-- docs
+|   `-- api-documentation.md
+|-- lib
+| |-- mock-data.ts
+| |-- types.ts
+| |-- utils.ts
+| `-- uuid.ts
+|-- node_modules
+|-- public
+|-- .eslintrc.json
+|-- .gitignore
+|-- components.json
+|-- next-env.d.ts
+|-- next.config.js
+|-- package-lock.json
+|-- package.json
+|-- postcss.config.js
+|-- README.md
+|-- tailwind.config.ts
+`-- tsconfig.json
 
 ### Key Directories Explained:
 
