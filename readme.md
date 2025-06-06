@@ -39,14 +39,17 @@ The project is structured as follows:
 ```
 .
 ├── app
-│   ├── page.tsx
 │   ├── [username]
 |   |         └── page.tss
-│   ├── page.tsx
-│   ├── layout.tsx
-│   └── api
-│       └── portfolio
-|               └── route.ts
+│   |── api
+│   |    └── portfolio
+|   |            └── route.ts
+│   ├── api-documentation
+|   |         └── page.tsx
+|   ├
+|   |── global.css
+|   |── pages.tsx
+|   └── layout.tsx
 |
 |── components
 │       ├── PortfolioForm.tsx
