@@ -149,11 +149,13 @@ export default function PortfolioSection({
         </div>
       )}
 
-      <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-          Portfolio
-        </h2>
-      </div>
+      {(profile.portfolioItems?.length || 0) > 0 && (
+        <div className="flex items-center justify-between">
+          <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            Portfolio
+          </h2>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {profile.portfolioItems?.map((item, index) => (

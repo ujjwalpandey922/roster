@@ -17,7 +17,7 @@ export default function ClientProfilePage() {
     <div className="min-h-screen bg-background">
       <ProfileHeader />
 
-      <main className="container px-4 py-8 mx-auto max-w-4xl">
+      <main className="container px-4 py-8 mx-auto max-w-4xl space-y-12">
         <div className="flex justify-end mb-6">
           <Button
             onClick={() => setIsEditing(!isEditing)}
@@ -40,9 +40,11 @@ export default function ClientProfilePage() {
 
         <EditableBasicInfo isEditing={isEditing} />
 
-        {profile.portfolioItems && <PortfolioGrid isEditing={isEditing} />}
+        {((profile.portfolioItems?.length ?? 0) > 0 || isEditing) && (
+          <PortfolioGrid isEditing={isEditing} />
+        )}
 
-        {profile.employers.length > 0 && (
+        {(profile.employers.length > 0 || isEditing) && (
           <EmployerSection isEditing={isEditing} />
         )}
       </main>
